@@ -17,22 +17,20 @@
     <a href="{% url 'home' %}">Form</a>
     <a href="{% url 'people' %}">Form data</a>
     </div>
-<div class="row">
+
     <div class="col-md-4">
-        <form action="/insert" method="post">
+        <form action="/update/{{ d.id }}" method="post">
             {% csrf_token %}
-    <input type="text" class="form-control mt-5" name="name" placeholder="Name">
-    <input type="email" class="form-control mt-5" name="email" placeholder="Email">
-    <input type="text" class="form-control mt-5" name="school" placeholder="School">
-    <input class="form-control mt-5 btn btn-success" name="" type="submit" value="Submit">
+    <input type="text" class="form-control mt-5" name="name" placeholder="Name" value="{{ l.name }}">
+    <input value="{{ l.email }}" type="email" class="form-control mt-5" name="email" placeholder="Email">
+    <input value="{{ l.school }}" type="text" class="form-control mt-5" name="school" placeholder="School">
+    <input class="form-control mt-5 btn btn-success" name="" type="submit" value="Update">
 </form>
 
     </div>
     <div class="col-md-8">
 
     </div>
-
-</div>
 
 
 </body>
